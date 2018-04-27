@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Company</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Sex</th>
+      <th>Birthday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |registration| %>
+      <tr>
+        <td><%= registration.full_name %></td>
+        <td><%= registration.company %></td>
+        <td><%= registration.telephone %></td>
+        <td><%= registration.email %></td>
+        <td><%= registration.age %></td>
+        <td><%= registration.address %></td>
+        <td><%= registration.sex %></td>
+        <td><%= registration.birthday %></td>
+        <td><%= link_to 'Show', registration %></td>
+        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registration', new_registration_path %>
